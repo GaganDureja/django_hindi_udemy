@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First WebApp | Results</title>
+</head>
+<body>
+<a href="{% url 'home'%}">Home</a>
+<h1>This is result page</h1>
+<p>This article has {{word_count}} words</p>
+<table>
+    <thead>
+         <tr>
+             <th>Word</th>
+             <th>Count</th>
+         </tr>
+    </thead>
+    <tbody>
+    {% for word,count_total in dict_words %}
+    <tr>
+        <td>{{word}}</td>
+        <td>{{count_total}}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+
+<p>Entered text is : <br><b>{{ text}}</b> </p>
+</body>
+</html>
